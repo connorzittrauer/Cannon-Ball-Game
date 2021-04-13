@@ -12,6 +12,8 @@ public class AIShooter : MonoBehaviour
     public UnityEvent playerTrigger;
     public bool hasFired;
     public int diffSetting = 0;
+
+    public int easyMin, easymax, medMin, medMax, hardMin, hardMax;
     
     // Start is called before the first frame update
     void Start()
@@ -44,18 +46,19 @@ public class AIShooter : MonoBehaviour
         //easy mode
         if (diffSetting == 1)
         {
-            Shoot(10, 20);
+            //10, 20
+            Shoot(easyMin, easymax);
             
         }
-        //medium
+        //medium 15 20
         else if (diffSetting == 2)
         {
-            Shoot(15, 20);
+            Shoot(medMin, medMax);
         }
-        //hard
+        //hard 20 20
         else
         {
-            Shoot(20, 20);
+            Shoot(hardMin, hardMax);
         }
         
      

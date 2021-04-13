@@ -14,6 +14,8 @@ public class Shoot : MonoBehaviour
     public UnityEvent monsterTrigger;    
     public bool canShoot;
     public bool hasFired;    
+    public UnityEvent shellCounter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +62,8 @@ public class Shoot : MonoBehaviour
             launchForce = 0;
 
             monsterTrigger.Invoke();
+            
+            shellCounter.Invoke();
 
             hasFired =  true;
             }

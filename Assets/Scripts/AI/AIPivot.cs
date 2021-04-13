@@ -10,6 +10,7 @@ public class AIPivot : MonoBehaviour
     static public int option;
     public int diffSetting = 0;
 
+    public int easyMin, easymax, medMin, medMax, hardMin, hardMax;
     void Start()
     {
         diffSetting = PlayerPrefs.GetInt("difficultyKey");
@@ -24,20 +25,20 @@ public class AIPivot : MonoBehaviour
 
     public void SetPivot()
     {
-        //easy mode
+        //easy mode -10, 10
         if (diffSetting == 1)
         {
-            Pivot(-10, 10);
+            Pivot(easyMin, easymax);
         }
-        //medium
+        //medium -5, 5
         else if (diffSetting == 2)
         {
-            Pivot(-5, 5);
+            Pivot(medMin, medMax);
         }
-        //hard
+        //hard 3, 3
         else
         {
-            Pivot(3, 3);
+            Pivot(hardMin, hardMax);
         }
 
     }

@@ -16,7 +16,7 @@ public class OffScreenWin : MonoBehaviour
 
     public IEnumerator DelayChangeScene()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         LoadNextScene();
     }
 

@@ -435,6 +435,7 @@ MonoBehaviour:
         m_CallState: 2
   canShoot: 0
   hasFired: 0
+  shellCount: {fileID: 1613238803}
 --- !u!1 &138027657
 GameObject:
   m_ObjectHideFlags: 0

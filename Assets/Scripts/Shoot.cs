@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Shoot : MonoBehaviour
 {
@@ -14,12 +15,33 @@ public class Shoot : MonoBehaviour
     public UnityEvent monsterTrigger;    
     public bool canShoot;
     public bool hasFired;    
-    
+
+    public Text shellCount;
+    private int count;
+    private int diffSetting;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        diffSetting = PlayerPrefs.GetInt("difficultyKey");
+
+                //initialize onscreen text
+        if (diffSetting == 1)
+        {
+            shellCount.text = "3";
+            count = 3;
+            
+        }
+        else if (diffSetting == 2)
+        {
+            shellCount.text = "2";
+            count = 2;
+        }
+        else
+        {
+            shellCount.text = "1";
+            count = 1;
+        }
     }
 
     // Update is called once per frame
@@ -35,7 +57,6 @@ public class Shoot : MonoBehaviour
     }
     void Shooting()
     {
-        
         
         if (Input.GetMouseButton(0))
         {
@@ -61,12 +82,53 @@ public class Shoot : MonoBehaviour
             timer = 0.0f;
             launchForce = 0;
 
-            monsterTrigger.Invoke();
-            
-            
 
-            hasFired =  true;
+        //initialize onscreen text
+        if (diffSetting == 1)
+        {   
+            
+            shellCount.text = "3";
+            Debug.Log("Count: " + count);
+            count -= 1;
+            shellCount.text = (count.ToString());
+            if (count == 0)
+            {
+                StartCoroutine(DelayChangeScene());
             }
+        }
+
+        else if (diffSetting == 2)
+        {   
+            
+            shellCount.text = "2";
+            Debug.Log("Count: " + count);
+            count -= 1;
+            shellCount.text = (count.ToString());
+            if (count == 0)
+            {
+                StartCoroutine(DelayChangeScene());
+            }
+        }
+
+        else
+        {
+            shellCount.text = "1";
+            Debug.Log("Count: " + count);
+            count -= 1;
+            shellCount.text = (count.ToString());
+            monsterTrigger.Invoke();
+
+        }
+            
+            
+        if (count != 0)
+        {
+            monsterTrigger.Invoke();
+        }
+            
+            
+                hasFired =  true;
+        }
         
         
         
@@ -80,7 +142,17 @@ public class Shoot : MonoBehaviour
     }
 
 
+    public IEnumerator DelayChangeScene()
+    {
+        yield return new WaitForSeconds(4);
+        LoadNextScene();
+    }
 
+
+    private void LoadNextScene()
+    {
+        SceneManager.LoadScene(4);
+    }
     
 
 }

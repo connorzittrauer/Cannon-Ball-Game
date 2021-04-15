@@ -435,20 +435,6 @@ MonoBehaviour:
         m_CallState: 2
   canShoot: 0
   hasFired: 0
-  shellCounter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1608910708}
-        m_MethodName: SetShell
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &138027657
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,6 +1692,7 @@ GameObject:
   - component: {fileID: 1608910707}
   - component: {fileID: 1608910706}
   - component: {fileID: 1608910708}
+  - component: {fileID: 1608910709}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1840,7 +1827,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diffSetting: 0
   count: 0
-  shellCounter: {fileID: 1613238803}
+--- !u!114 &1608910709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608910703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea5c58c8797c014c97efaefa1ff0074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diffSetting: 0
+  shellCount: {fileID: 1613238803}
 --- !u!1 &1613238801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1875,7 +1875,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 349, y: 208}
+  m_AnchoredPosition: {x: 349, y: 198.52}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1613238803
@@ -1900,11 +1900,11 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 23
-    m_FontStyle: 2
+    m_FontStyle: 3
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

@@ -3,19 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-public class PlayerLose : MonoBehaviour
+public class OffScreenWin : MonoBehaviour
 {
-    public int diffSetting;
-    public int count;
-    
 
-    
-    void Start()
-    {
-
-    }
     //once the character is knocked off the map, change scenes
     void OnBecameInvisible()
     {
@@ -29,9 +20,8 @@ public class PlayerLose : MonoBehaviour
         LoadNextScene();
     }
 
-
     private void LoadNextScene()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(5);
     }
 }

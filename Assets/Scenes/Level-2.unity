@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -942,8 +942,8 @@ MonoBehaviour:
   diffSetting: 0
   easyMin: 0
   easymax: 0
-  medMin: 0
-  medMax: 0
+  medMin: 5
+  medMax: 12
   hardMin: 5
   hardMax: 5
 --- !u!4 &1036221651
@@ -996,8 +996,8 @@ MonoBehaviour:
   diffSetting: 0
   easyMin: 0
   easymax: 0
-  medMin: 0
-  medMax: 0
+  medMin: 15
+  medMax: 20
   hardMin: 20
   hardMax: 20
 --- !u!1 &1078698561
@@ -1323,6 +1323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c2456b2b61be64e8fb3aa0ae9ab2db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  diffSetting: 0
+  count: 0
 --- !u!61 &1861972709
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -24,11 +24,11 @@ public class ShellCounter : MonoBehaviour
         }
         else if (diffSetting == 2)
         {
-            shellCount.text = "3";
+            shellCount.text = "2";
         }
         else
         {
-            shellCount.text = "2";
+            shellCount.text = "1";
         }
 
     }

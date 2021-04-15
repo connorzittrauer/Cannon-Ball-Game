@@ -9,7 +9,7 @@ public class ShellCounter : MonoBehaviour
 
     public int diffSetting;
     public Text shellCount;
-    public int easyCount;
+    private int easyCount = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,7 @@ public class ShellCounter : MonoBehaviour
         //initialize onscreen text
         if (diffSetting == 1)
         {
-            shellCount.text = "5";
+            shellCount.text = "3";
             
         }
         else if (diffSetting == 2)
@@ -35,10 +35,9 @@ public class ShellCounter : MonoBehaviour
 
     void update()
     {
-        
+        diffSetting = PlayerPrefs.GetInt("difficultyKey");
         if (Input.GetButtonUp("Fire1") && diffSetting == 1)
         {
-            easyCount = 5;
             Debug.Log(easyCount);
             easyCount= easyCount - 1;
             shellCount.text = (easyCount.ToString());
